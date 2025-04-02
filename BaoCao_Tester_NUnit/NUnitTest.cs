@@ -5,13 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using static BaoCao_KTPM_GK.Form1;
 
 namespace BaoCao_Tester_NUnit
 {
     [nu.TestFixture]
-    public class UnitTest1
+    public class UnitTest1_62_Trung
     {
-        public static IEnumerable<nu.TestCaseData> DocDuLieuTuExcel()
+        public static IEnumerable<nu.TestCaseData> DocDuLieuTuExcel_62_Trung()
         {
             string filePath = Path.Combine(nu.TestContext.CurrentContext.TestDirectory, "Data", "TestData.xlsx");
 
@@ -20,32 +21,32 @@ namespace BaoCao_Tester_NUnit
             var worksheet = (Excel.Worksheet)workbook.Sheets[1];
             var usedRange = worksheet.UsedRange;
 
-            int soLuongDong = usedRange.Rows.Count;
+            int soLuongDong_62_Trung = usedRange.Rows.Count;
 
-            for (int dong = 2; dong <= soLuongDong; dong++) // Bỏ qua tiêu đề
+            for (int dong_62_Trung = 2; dong_62_Trung <= soLuongDong_62_Trung; dong_62_Trung++) // Bỏ qua tiêu đề
             {
-                double x1 = (double)(usedRange.Cells[dong, 1] as Excel.Range).Value2;
-                double y1 = (double)(usedRange.Cells[dong, 2] as Excel.Range).Value2;
-                double x2 = (double)(usedRange.Cells[dong, 3] as Excel.Range).Value2;
-                double y2 = (double)(usedRange.Cells[dong, 4] as Excel.Range).Value2;
-                double x3 = (double)(usedRange.Cells[dong, 5] as Excel.Range).Value2;
-                double y3 = (double)(usedRange.Cells[dong, 6] as Excel.Range).Value2;
-                double x4 = (double)(usedRange.Cells[dong, 7] as Excel.Range).Value2;
-                double y4 = (double)(usedRange.Cells[dong, 8] as Excel.Range).Value2;
-                double dienTichKyVong = (double)(usedRange.Cells[dong, 9] as Excel.Range).Value2;
+                double x1_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 1] as Excel.Range).Value2;
+                double y1_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 2] as Excel.Range).Value2;
+                double x2_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 3] as Excel.Range).Value2;
+                double y2_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 4] as Excel.Range).Value2;
+                double x3_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 5] as Excel.Range).Value2;
+                double y3_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 6] as Excel.Range).Value2;
+                double x4_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 7] as Excel.Range).Value2;
+                double y4_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 8] as Excel.Range).Value2;
+                double dienTichKyVong_62_Trung = (double)(usedRange.Cells[dong_62_Trung, 9] as Excel.Range).Value2;
 
-                yield return new nu.TestCaseData(x1, y1, x2, y2, x3, y3, x4, y4).Returns(dienTichKyVong);
+                yield return new nu.TestCaseData(x1_62_Trung, y1_62_Trung, x2_62_Trung, y2_62_Trung, x3_62_Trung, y3_62_Trung, x4_62_Trung, y4_62_Trung).Returns(dienTichKyVong_62_Trung);
             }
 
             workbook.Close(false);
             excelApp.Quit();
         }
 
-        [nu.Test, nu.TestCaseSource(nameof(DocDuLieuTuExcel))]
-        public double KiemThuTinhDienTich(double x1, double y1, double x2, double y2,
-                                          double x3, double y3, double x4, double y4)
+        [nu.Test, nu.TestCaseSource(nameof(DocDuLieuTuExcel_62_Trung))]
+        public double KiemThuTinhDienTich_62_Trung(double x1_62_Trung, double y1_62_Trung, double x2_62_Trung, double y2_62_Trung,
+                                                   double x3_62_Trung, double y3_62_Trung, double x4_62_Trung, double y4_62_Trung)
         {
-            return HinhChuNhat.TinhDienTich(x1, y1, x2, y2, x3, y3, x4, y4);
+            return Rectangle_62_Trung.CalculateArea_62_Trung(x1_62_Trung, y1_62_Trung, x2_62_Trung, y2_62_Trung, x3_62_Trung, y3_62_Trung, x4_62_Trung, y4_62_Trung);
         }
     }
 }
