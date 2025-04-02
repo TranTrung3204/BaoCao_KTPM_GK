@@ -137,7 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Data_62_Trung\TestDataExcel.xlsx" />
+    <None Include="Data_62_Trung\TestData_Excel.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
