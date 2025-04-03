@@ -80,5 +80,21 @@ namespace BaoCao_KTPM_GK
                 return (d1_62_Trung == d3_62_Trung && d2_62_Trung == d4_62_Trung && diagonal1_62_Trung == diagonal2_62_Trung);
             }
         }
+
+        public class Diem_51_Dat
+        {
+            public int x_51_Dat, y_51_Dat;
+            public Diem_51_Dat(int x_51_Dat, int y_51_Dat)
+            {
+                this.x_51_Dat = x_51_Dat;
+                this.y_51_Dat = y_51_Dat;
+            }
+            public Diem_51_Dat()
+            {
+                x_51_Dat = 0;
+                x_51_Dat = 0;
+            }
+
+        }
     }
 }
