@@ -13,10 +13,8 @@ namespace BaoCao_Tester_NUnit
     {
         public static IEnumerable<TestCaseData> DocDuLieuTuExcel_62_Trung()
         {
-            string filePath = Path.Combine(TestContext.CurrentContext.TestDirectory, "Data", "TestData_Excel.xlsx");
-
             var excelApp = new Excel.Application();
-            var workbook = excelApp.Workbooks.Open(filePath);
+            var workbook = excelApp.Workbooks.Open(@"C:\KTPM\GK\BaoCao_KTPM_GK\BaoCao_Tester_NUnit\Data_62_Trung\TestData_Excel.xlsx");
             var worksheet = (Excel.Worksheet)workbook.Sheets[1];
             var usedRange = worksheet.UsedRange;
 
