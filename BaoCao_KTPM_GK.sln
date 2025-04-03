@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaoCao_KTPM_GK", "BaoCao_KTPM_GK\BaoCao_KTPM_GK.csproj", "{84E3A123-2D53-4F16-B632-6853C06DBAE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaoCao_Tester_NUnit", "BaoCao_Tester_NUnit\BaoCao_Tester_NUnit.csproj", "{A17964D2-7FE1-45DB-AF05-116F20808263}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium_Webdriver", "SeleniumWebdriver\Selenium_Webdriver.csproj", "{17736BD0-BEF1-4E07-9393-3DB177242F1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A17964D2-7FE1-45DB-AF05-116F20808263}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A17964D2-7FE1-45DB-AF05-116F20808263}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A17964D2-7FE1-45DB-AF05-116F20808263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17736BD0-BEF1-4E07-9393-3DB177242F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17736BD0-BEF1-4E07-9393-3DB177242F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17736BD0-BEF1-4E07-9393-3DB177242F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17736BD0-BEF1-4E07-9393-3DB177242F1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
