@@ -15,11 +15,9 @@ namespace SeleniumSauceDemoTest
         public void Setup()
         {
             ChromeOptions options_62_Trung = new ChromeOptions();
-
             options_62_Trung.AddUserProfilePreference("credentials_enable_service", false);
             options_62_Trung.AddUserProfilePreference("profile.password_manager_enabled", false);
 
-            // Khởi tạo trình duyệt với các tùy chọn đã cấu hình
             driver_62_Trung = new ChromeDriver(options_62_Trung);
             driver_62_Trung.Manage().Window.Maximize();
             driver_62_Trung.Navigate().GoToUrl("https://www.saucedemo.com/");
@@ -28,23 +26,38 @@ namespace SeleniumSauceDemoTest
         [Test]
         public void Test_LoginAndAddToCart_62_Trung()
         {
-            //Đăng nhập 
+            Thread.Sleep(1000);
             driver_62_Trung.FindElement(By.Id("user-name")).SendKeys("standard_user");
+            Thread.Sleep(1000);
             driver_62_Trung.FindElement(By.Id("password")).SendKeys("secret_sauce");
+            Thread.Sleep(1000);
             driver_62_Trung.FindElement(By.Id("login-button")).Click();
-            Thread.Sleep(5000); // Đợi trang load
+            Thread.Sleep(2000);
 
-            //Thêm sản phẩm đầu tiên vào giỏ hàng
+
             driver_62_Trung.FindElement(By.CssSelector("button[name='add-to-cart-sauce-labs-backpack']")).Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
 
-            //Mở giỏ hàng để kiểm tra
             driver_62_Trung.FindElement(By.ClassName("shopping_cart_link")).Click();
             Thread.Sleep(3000);
 
-            //Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
             IWebElement cartItem_62_Trung = driver_62_Trung.FindElement(By.ClassName("inventory_item_name"));
             Assert.That(cartItem_62_Trung.Text, Is.EqualTo("Sauce Labs Backpack"), "Sản phẩm chưa được thêm vào giỏ hàng!");
+        }
+
+        [Test]
+        public void Test_InvalidLogin_62_Trung()
+        {
+            Thread.Sleep(1000);
+            driver_62_Trung.FindElement(By.Id("user-name")).SendKeys("invalid_user");
+            Thread.Sleep(1000);
+            driver_62_Trung.FindElement(By.Id("password")).SendKeys("wrong_password");
+            Thread.Sleep(1000);
+            driver_62_Trung.FindElement(By.Id("login-button")).Click();
+            Thread.Sleep(3000);
+
+            IWebElement errorMessage = driver_62_Trung.FindElement(By.ClassName("error-message-container"));
+            Assert.That(errorMessage.Displayed, Is.True, "Thông báo lỗi không hiển thị khi đăng nhập sai!");
         }
 
         [TearDown]
