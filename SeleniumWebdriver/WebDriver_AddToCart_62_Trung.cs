@@ -79,8 +79,6 @@ namespace SeleniumSauceDemoTest
                 }
             }
             catch (Exception) { }
-
-            // Kiểm tra xem đã được chuyển đến trang inventory chưa, nếu chưa thì có thể vẫn ở popup
             string currentUrl = driver_62_Trung.Url;
             if (!currentUrl.Contains("inventory.html"))
             {
@@ -99,21 +97,6 @@ namespace SeleniumSauceDemoTest
             Thread.Sleep(3000);
             IWebElement cartItem_62_Trung = driver_62_Trung.FindElement(By.ClassName("inventory_item_name"));
             Assert.That(cartItem_62_Trung.Text, Is.EqualTo("Sauce Labs Backpack"), "Sản phẩm chưa được thêm vào giỏ hàng!");
-
-            // Cập nhật số lượng sản phẩm thành 8
-            try
-            {
-                IWebElement quantityField = driver_62_Trung.FindElement(By.ClassName("cart_quantity"));
-                quantityField.Clear();
-                Thread.Sleep(1000);
-                quantityField.SendKeys("8");
-                Thread.Sleep(2000);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Không thể cập nhật số lượng: " + ex.Message);
-                // Có thể Swag Labs không cho phép sửa số lượng trực tiếp trên field
-            }
         }
 
         [Test]
