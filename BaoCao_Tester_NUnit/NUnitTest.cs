@@ -16,7 +16,7 @@ namespace BaoCao_Tester_NUnit
         public static IEnumerable<TestCaseData> DocDuLieuTuExcel_62_Trung()
         {
             var excelApp = new Excel.Application();
-            var workbook = excelApp.Workbooks.Open(@"C:\KTPM\GK\BaoCao_KTPM_GK\BaoCao_Tester_NUnit\Data_62_Trung\TestData_Excel.xlsx");
+            var workbook = excelApp.Workbooks.Open(@"C:\Users\ASUS\Source\Repos\BaoCao_KTPM_GK\BaoCao_Tester_NUnit\Data_62_Trung\TestData_Excel.xlsx");
             var worksheet = (Excel.Worksheet)workbook.Sheets[1];
             var usedRange = worksheet.UsedRange;
 
@@ -96,7 +96,7 @@ namespace BaoCao_Tester_NUnit
         public static IEnumerable<object[]> TestWithDataSource()
         {
             Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"C:\Users\ASUS\Downloads\HocKy2-Nam3\testingAgain\UnitTestProject1\PlayingBook.xlsx");
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"C:\Users\ASUS\Source\Repos\BaoCao_KTPM_GK\BaoCao_Tester_NUnit\Data_51_Dat\PlayingBook.xlsx");
             Excel._Worksheet xlWorksheet;
             xlWorksheet = xlWorkbook.Sheets[1];
 
