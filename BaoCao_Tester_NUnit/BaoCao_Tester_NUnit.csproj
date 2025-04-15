@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Data_62_Trung\TestData.csv" />
     <None Include="Data_62_Trung\TestData_Excel.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
